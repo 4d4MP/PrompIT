@@ -16,6 +16,7 @@ struct PrompITApp: App {
 }
 
 private struct TeleprompterView: View {
+    @Environment(\.openSettings) private var openSettings
     @AppStorage("scriptMarkdown") private var scriptMarkdown = ""
     @AppStorage("fontSize") private var fontSize = 28.0
     @AppStorage("lineSpacing") private var lineSpacing = 6.0
