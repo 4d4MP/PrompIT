@@ -38,7 +38,9 @@ private struct TeleprompterView: View {
                     .padding(40)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
-            SettingsLink {
+            Button {
+                NSApp.sendAction(#selector(NSApplication.showSettingsWindow), to: nil, from: nil)
+            } label: {
                 Image(systemName: "gearshape.fill")
                     .foregroundColor(textColor.opacity(0.8))
                     .padding(10)
