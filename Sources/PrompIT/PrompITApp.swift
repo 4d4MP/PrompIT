@@ -16,6 +16,7 @@ struct PrompITApp: App {
 }
 
 private struct TeleprompterView: View {
+    @Environment(\.openSettings) private var openSettings
     @AppStorage("scriptMarkdown") private var scriptMarkdown = ""
     @AppStorage("fontSize") private var fontSize = 28.0
     @AppStorage("lineSpacing") private var lineSpacing = 6.0
@@ -38,7 +39,9 @@ private struct TeleprompterView: View {
                     .padding(40)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
-            SettingsLink {
+            Button {
+                openSettings()
+            } label: {
                 Image(systemName: "gearshape.fill")
                     .foregroundColor(textColor.opacity(0.8))
                     .padding(10)
